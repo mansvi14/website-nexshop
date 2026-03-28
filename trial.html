@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Trial Room - NexShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mega-menu.css">
+    <link rel="stylesheet" href="trial.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="trial-container">
+        <!-- The Mirror -->
+        <div class="mirror" id="mirrorContainer">
+            <div class="mannequin" id="mannequin">
+                <div class="mannequin-head"></div>
+                <div class="mannequin-body" id="avatarBody"></div>
+                <div class="mannequin-legs">
+                    <div class="mannequin-leg" id="avatarLeftLeg"></div>
+                    <div class="mannequin-leg" id="avatarRightLeg"></div>
+                </div>
+            </div>
+            <div class="trial-actions">
+                <label for="photoUpload" class="trial-btn" style="background-color: var(--primary-light); color: white; cursor: pointer;">
+                    <i class='bx bx-upload'></i> Upload Photo
+                </label>
+                <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                <button class="trial-btn reset-btn" id="resetBtn"><i class='bx bx-refresh'></i> Reset</button>
+                <button class="trial-btn save-btn" id="saveBtn"><i class='bx bx-camera'></i> Save</button>
+            </div>
+        </div>
+
+        <!-- The Wardrobe -->
+        <div class="wardrobe">
+            <div class="wardrobe-header">
+                <h2>Your Wardrobe</h2>
+                <p>Click on any item below to try it on.</p>
+            </div>
+
+            <h3 style="margin-bottom: 1rem; color: var(--primary-light);">Topwear / Dresses</h3>
+            <div class="clothing-grid" id="topwearGrid">
+                <div class="clothing-item red-shirt" data-type="top" data-color="#ef4444" data-style="shirt">
+                    <div class="clothing-preview"></div>
+                    <p class="clothing-title">Red Classic Tee</p>
+                </div>
+                <div class="clothing-item blue-shirt" data-type="top" data-color="#3b82f6" data-style="shirt">
+                    <div class="clothing-preview"></div>
+                    <p class="clothing-title">Blue Denim Jacket</p>
+                </div>
+                <div class="clothing-item black-dress" data-type="full" data-color="#0f172a" data-style="dress">
+                    <div class="clothing-preview"></div>
+                    <p class="clothing-title">Elegant Evening Dress</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem 0; color: var(--primary-light);">Bottomwear</h3>
+            <div class="clothing-grid" id="bottomwearGrid">
+                <div class="clothing-item blue-jeans" data-type="bottom" data-color="#1e3a8a" data-style="jeans">
+                    <div class="clothing-preview"></div>
+                    <p class="clothing-title">Slim Fit Jeans</p>
+                </div>
+                <div class="clothing-item black-pants" data-type="bottom" data-color="#111827" data-style="pants">
+                    <div class="clothing-preview"></div>
+                    <p class="clothing-title">Formal Black Trousers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="navbar.js"></script>
+    <script src="trial.js"></script>
+</body>
+</html>

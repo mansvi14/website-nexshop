@@ -1,0 +1,181 @@
+/* Virtual Trial Room Styles */
+.trial-container {
+    display: flex;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+    background-color: var(--bg-color);
+}
+
+.mirror {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #f1f5f9 0%, #cbd5e1 100%);
+    position: relative;
+    border-right: 2px solid var(--border-color);
+}
+
+.mannequin {
+    width: 250px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mannequin-head {
+    width: 80px;
+    height: 100px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
+}
+
+.mannequin-body {
+    width: 180px;
+    height: 250px;
+    background-color: #e2e8f0;
+    border-radius: 30px 30px 10px 10px;
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
+    mix-blend-mode: multiply;
+}
+
+.mannequin-legs {
+    width: 140px;
+    height: 230px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.mannequin-leg {
+    width: 65px;
+    height: 100%;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    mix-blend-mode: multiply;
+}
+
+.wardrobe {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: var(--surface-color);
+}
+
+.wardrobe-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wardrobe-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.wardrobe-header p {
+    color: var(--text-light);
+}
+
+.clothing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.clothing-item {
+    background-color: #f8fafc;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clothing-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+    transform: translateY(-5px);
+}
+
+.clothing-preview {
+    width: 80px;
+    height: 100px;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+}
+
+.clothing-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Specific Clothing Preview Colors */
+.red-shirt .clothing-preview { background-color: #ef4444; border-radius: 20px 20px 5px 5px; }
+.blue-shirt .clothing-preview { background-color: #3b82f6; border-radius: 20px 20px 5px 5px; }
+.black-dress .clothing-preview { background-color: #0f172a; height: 150px; border-radius: 25px 25px 10px 10px; }
+.blue-jeans .clothing-preview { background-color: #1e3a8a; height: 120px; border-radius: 5px; width: 60px; }
+.black-pants .clothing-preview { background-color: #111827; height: 120px; border-radius: 5px; width: 60px; }
+
+/* Trial Action Buttons */
+.trial-actions {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.trial-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.reset-btn {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.reset-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.save-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: var(--primary-light);
+}
+
+@media (max-width: 768px) {
+    .trial-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .mirror {
+        height: 60vh;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+    }
+}

@@ -1,0 +1,65 @@
+/* Mega Menu Styles */
+.nav-links {
+    position: relative; /* Context for mega menu */
+}
+
+.mega-dropdown {
+    position: static; /* Let the mega menu position relative to .nav-container */
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface-color);
+    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--primary-color);
+    display: flex;
+    gap: 3rem;
+    padding: 2.5rem 5%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* On hover of list item, show mega menu */
+.nav-links li:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mega-column h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mega-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.mega-column a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.mega-column a::after {
+    display: none; /* remove hover line */
+}
+
+.mega-column a:hover {
+    font-weight: 600;
+    color: var(--primary-color);
+}
